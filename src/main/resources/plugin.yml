@@ -2,4 +2,5 @@ name: AFKPlusPAPI
 version: ${project.version}
 main: net.lapismc.afkpluspapi.AFKPlusPAPI
 api-version: 1.13
+folia-supported: true
 depend: [AFKPlus,PlaceholderAPI]
