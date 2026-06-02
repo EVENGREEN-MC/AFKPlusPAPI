@@ -22,6 +22,18 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      - name: Install AFKPlus dependency
+        run: |
+          curl -fL "https://github.com/LapisPlugins/AFKPlus/releases/download/3.5.2/AFKPlus.jar" -o AFKPlus.jar
+          mvn install:install-file \
+            -Dfile=AFKPlus.jar \
+            -DgroupId=net.lapismc \
+            -DartifactId=AFKPlus \
+            -Dversion=3.5.2 \
+            -Dpackaging=jar \
+            -DgeneratePom=true \
+            --no-transfer-progress
+
       - name: Build with Maven
         run: mvn clean package --no-transfer-progress
 
